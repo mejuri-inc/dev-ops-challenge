@@ -1,15 +1,13 @@
 FROM ruby:2.3-slim
 
 ARG appDir=/app
-#ENV $BUNDLE_PATH=$appDir/bundle
 
 WORKDIR $appDir
 
 RUN apt-get update
 RUN mkdir -p \
     /usr/share/man/man1 \
-    /usr/share/man/man7 \
-    $appDir/bundle
+    /usr/share/man/man7
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -f \
     ruby-dev \
     ruby-execjs \
