@@ -92,3 +92,7 @@ You can finde the domain name you need to use to reach the app, in the AWS conso
 
 Since the intetration with the RDS PostgreSQL service isn't finished, the query will throw an error.
 
+
+Ref:
+https://github.com/nathanpeck/aws-cloudformation-fargate.git
+https://github.com:garystafford/aws-rds-postgres.git
