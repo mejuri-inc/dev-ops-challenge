@@ -49,19 +49,19 @@ This repository holds the Mejuri App code, as well the infrastructure definition
 
 ## PREREQUISITES
 
-In order to run the commands steated below, please ensure your system meet the following requirements:
+In order to run the commands stated below, please ensure your system meets the following requirements:
 
 - Docker version 19.03.12, build 48a6621 (or subsequent compatible version)
 - AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 - Your AWS account is already configured and its resources accessible from your shell: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
-- Your use has an Admin role or similar persmissions
+- Your uses has an Admin role or similar permissions
 
 ## Clone this repository
 1. `git clone git@github.com:cig0/dev-ops-challenge.git`
 
 ## Build the Docker image
 
-2. `docker build --no-cache -t mejuri-app .`
+2. `docker build --no-cache -t app .`
 3. `docker tag app $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/app`
 (Be sure to replace $AWS_ACCOUNT_ID and $REGION with your own values, i.e:
 `docker tag app 1234567890.dkr.ecr.us-east-1.amazonaws.com/app`)
@@ -70,7 +70,7 @@ In order to run the commands steated below, please ensure your system meet the f
 
 Now we need to log into our AWS ECR, create a repository for our image and then  push the image there:
 
-1. `aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_NUMBER.dkr.ecr.$REGION.amazonaws.com`
+1. `aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com`
 2. `aws ecr create-repository --repository-name app`
 3. `docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/app`
 
