@@ -9,4 +9,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["/bin/sh"]
+CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
