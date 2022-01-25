@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: 192.168.0.10
+  host: db
   username: postgres
   password: mysecretpassword
 
