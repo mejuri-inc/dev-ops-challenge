@@ -40,3 +40,17 @@ db name: hello_world
 
 Is everithing is ok the route /hello_world will return the following respose:
 {"id":1,"text":"Hello World!"}
+
+## Notes:
+* Uncommented therubyracer gem in Gemfile to include as pre-req
+* Using Ruby 2.3 due to compatibility issues with 2.2
+* Created Docker compose file to start up full stack
+
+## How to deploy this app:
+1) Clone repo `git clone -b development https://github.com/behrendsr/dev-ops-challenge.git`
+2) Execute docker compose: `docker compose up`
+3) Execute db/restoredb.sh to restore database
+4) Access site: http://localhost/hello_world
+
+## Customization:
+Local web site port can be customized in docker-compose file
